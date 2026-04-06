@@ -1,8 +1,9 @@
-# Railway / Nixpacks: Laravel must listen on 0.0.0.0 and Railway's $PORT (not 127.0.0.1:8000).
+# Railway / Nixpacks: bind 0.0.0.0:$PORT and route all requests through public/server.php (Laravel front controller).
+# Do not use `php -S -t public` without a router — Laravel routes will 404.
 # https://docs.railway.com/
 
 [phases.build]
 cmds = ["npm install", "npm run build"]
 
 [start]
-cmd = "php artisan serve --host=0.0.0.0 --port=$PORT"
+cmd = "cd public && php -S 0.0.0.0:$PORT server.php"
