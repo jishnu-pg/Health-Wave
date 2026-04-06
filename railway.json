@@ -4,7 +4,7 @@
     "buildCommand": "npm install && npm run build"
   },
   "deploy": {
-    "startCommand": "cd public && php -S 0.0.0.0:$PORT server.php",
+    "startCommand": "sh railway-start.sh",
     "healthcheckPath": "/up",
     "healthcheckTimeout": 120,
     "restartPolicyType": "ON_FAILURE"

@@ -6,4 +6,4 @@
 cmds = ["npm install", "npm run build"]
 
 [start]
-cmd = "cd public && php -S 0.0.0.0:$PORT server.php"
+cmd = "sh railway-start.sh"

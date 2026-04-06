@@ -1,1 +1,1 @@
-web: cd public && php -S 0.0.0.0:$PORT server.php
+web: sh railway-start.sh
