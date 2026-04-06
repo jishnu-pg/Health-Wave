@@ -1,0 +1,8 @@
+# Railway / Nixpacks: Laravel must listen on 0.0.0.0 and Railway's $PORT (not 127.0.0.1:8000).
+# https://docs.railway.com/
+
+[phases.build]
+cmds = ["npm install", "npm run build"]
+
+[start]
+cmd = "php artisan serve --host=0.0.0.0 --port=$PORT"
